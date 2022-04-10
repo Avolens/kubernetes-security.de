@@ -1,4 +1,4 @@
-baseURL = "kubernetes-security.de"
+baseURL = "https://kubernetes-security.de"
 defaultContentLanguage = "de"
 languageCode = "de"
 title = "Kubernetes Security Blog by Avolens"
@@ -182,7 +182,7 @@ theme = "FeelIt"
   description = "Kubernetes Security Blog by AVOLENS"
   keywords = ["Kubernetes", "Security", "Blog", "Avolens"]
   defaultTheme = "auto"
-  gitRepo = "https://github.com/Avolens/kubernetes-security.de"
+  gitRepo = "https://github.com/avolens/kubernetes-security.de"
   fingerprint = ""
   dateFormat = "2006-01-02"
   images = ["/images/kubernetes-logo.svg"]
