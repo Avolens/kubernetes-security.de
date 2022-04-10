@@ -1,0 +1,25 @@
+// ==============================
+// Override Variables
+// 覆盖变量
+// ==============================
+@media only screen and (max-width: 2560px) {
+  .page {
+    width: 80%;
+  }
+
+  .single, .archive {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .page, .single {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .page, .single {
+    width: 100%;
+  }
+}

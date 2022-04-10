@@ -1,0 +1,384 @@
+baseURL = "kubernetes-security.de"
+defaultContentLanguage = "de"
+languageCode = "de"
+title = "Kubernetes Security Blog by Avolens"
+
+theme = "FeelIt"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    pre = ""
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "authors"
+    pre = ""
+    post = ""
+    name = "Authors"
+    url = "/authors/"
+    title = ""
+    weight = 4
+
+[languages]
+  [languages.en]
+    weight = 1
+    title = "Kubernetes Security Blog by Avolens"
+    languageCode = "en"
+    languageName = "English"
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      pre = ""
+      post = ""
+      name = "Posts"
+      url = "/posts/"
+      title = ""
+      weight = 1
+    [[languages.en.menu.main]]
+      identifier = "tags"
+      pre = ""
+      post = ""
+      name = "Tags"
+      url = "/tags/"
+      title = ""
+      weight = 2
+    [[languages.en.menu.main]]
+      identifier = "categories"
+      pre = ""
+      post = ""
+      name = "Categories"
+      url = "/categories/"
+      title = ""
+      weight = 3
+    [[languages.en.menu.main]]
+      identifier = "authors"
+      pre = ""
+      post = ""
+      name = "Authors"
+      url = "/authors/"
+      title = ""
+      weight = 4
+  [languages.de]
+    weight = 2
+    title = "Kubernetes Security blog by Avolens"
+    # language code, CN only here
+    languageCode = "de"
+    languageName = "German"
+    [[languages.de.menu.main]]
+      identifier = "posts"
+      pre = ""
+      post = ""
+      name = "Posts"
+      url = "/posts/"
+      title = ""
+      weight = 1
+    [[languages.de.menu.main]]
+      identifier = "tags"
+      pre = ""
+      post = ""
+      name = "Tags"
+      url = "/tags/"
+      title = ""
+      weight = 2
+    [[languages.de.menu.main]]
+      identifier = "categories"
+      pre = ""
+      post = ""
+      name = "Kategorien"
+      url = "/categories/"
+      title = ""
+      weight = 3
+    [[languages.de.menu.main]]
+      identifier = "authors"
+      pre = ""
+      post = ""
+      name = "Autoren"
+      url = "/authors/"
+      title = ""
+      weight = 4
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 5
+
+[author]
+  name = "Avolens GmbH"
+  email = ""
+  link = "https://avolens.com"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[Permalinks]
+  posts = ":filename"
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
+
+[params]
+  version = "1.0.X"
+  description = "Kubernetes Security Blog by AVOLENS"
+  keywords = ["Kubernetes", "Security", "Blog", "Avolens"]
+  defaultTheme = "auto"
+  gitRepo = "https://github.com/Avolens/kubernetes-security.de"
+  fingerprint = ""
+  dateFormat = "2006-01-02"
+  images = ["/images/kubernetes-logo.svg"]
+  SourceMap = true
+
+  [params.pwa]
+    enable = true
+    version = "1.0.1"
+
+  [params.app]
+    title = "Kubernetes Security Blog by AVOLENS"
+    noFavicon = false
+    svgFavicon = ""
+    themeColor = "#ffffff"
+    iconColor = "#5bbad5"
+    tileColor = "#da532c"
+
+  [params.search]
+    enable = true
+    type = "lunr"
+    contentLength = 4000
+    placeholder = ""
+    maxResultLength = 10
+    snippetLength = 30
+    highlightTag = "em"
+    absoluteURL = false
+
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+    [params.header.title]
+      logo = ""
+      name = "Kubernetes Security Blog by AVOLENS"
+      pre = ""
+      post = ""
+      typeit = false
+      rss = true
+
+  [params.footer]
+    enable = true
+    custom = ''
+    hugo = true
+    copyright = true
+    author = true
+    since = 2022
+    icp = ""
+    license = ''
+
+  [params.section]
+    paginate = 10
+    dateFormat = "01-02"
+    rss = 10
+
+  [params.list]
+    paginate = 20
+    dateFormat = "01-02"
+    rss = 10
+
+  [params.about]
+    enable = false
+
+  [params.home]
+    rss = 10
+    [params.home.profile]
+      enable = true
+      gravatarEmail = ""
+      avatarURL = "/images/kubernetes-logo.svg"
+      title = "Kubernetes Security Blog by AVOLENS"
+      subtitle = "Secure your Deployments"
+      typeit = true
+      social = true
+      disclaimer = ""
+    [params.home.posts]
+      enable = true
+      paginate = 6
+      imagePreview = true
+      defaultHiddenFromHomePage = false
+
+  [params.social]
+    GitHub = "avolens"
+    Linkedin = ""
+    Twitter = ""
+    Instagram = ""
+    Gitlab = ""
+    Youtubechannel = "UC68ArUoZnll50LGXVAWbK8w"
+
+  [params.page]
+    hiddenFromHomePage = false
+    hiddenFromSearch = false
+    twemoji = true
+    lightgallery = true
+    ruby = true
+    fraction = true
+    fontawesome = true
+    cdnfontawesome = true
+    linkToMarkdown = true
+    improveArticle = ""
+    rssFullText = false
+    [params.page.toc]
+      enable = true
+      keepStatic = false
+      auto = true
+    [params.page.math]
+      enable = true
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      copyTex = true
+      mhchem = true
+    [params.page.code]
+      copy = true
+      maxShownLines = 10
+    [params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = false
+      Linkedin = true
+      Whatsapp = false
+      Pinterest = false
+      Tumblr = false
+      HackerNews = false
+      Reddit = false
+      VK = false
+      Buffer = false
+      Xing = false
+      Line = false
+      Instapaper = false
+      Pocket = false
+      Digg = false
+      Stumbleupon = false
+      Flipboard = false
+      Weibo = false
+      Renren = false
+      Myspace = false
+      Blogger = false
+      Baidu = false
+      Odnoklassniki = false
+      Evernote = false
+      Skype = false
+      Trello = false
+      Mix = false
+    [params.page.comment]
+      enable = true
+      [params.page.comment.disqus]
+        enable = false
+      [params.page.comment.vssue]
+        enable = false
+        platform = ""
+        owner = ""
+        repo = ""
+        clientId = ""
+        clientSecret = ""
+      [params.page.comment.gitalk]
+        enable = false
+      [params.page.comment.valine]
+        enable = false
+      [params.page.comment.facebook]
+        enable = false
+      [params.page.comment.telegram]
+        enable = false
+      [params.page.comment.commento]
+        enable = false
+      [params.page.comment.utterances]
+        enable = false
+    [params.page.seo]
+      images = []
+      [params.page.seo.publisher]
+        name = ""
+        logoUrl = ""
+      
+  [params.typeit]
+    speed = 100
+    cursorSpeed = 1000
+    cursorChar = "|"
+
+  [params.verification]
+    google = ""
+    bing = ""
+    yandex = ""
+    pinterest = ""
+    baidu = ""
+
+  [params.seo]
+    image = ""
+    thumbnailUrl = ""
+
+  [params.analytics]
+    enable = false
+
+  [params.cookieconsent]
+    enable = false
+
+  [params.cdn]
+    data = ""
+
+  [params.compatibility]
+    polyfill = false
+    objectFit = false
