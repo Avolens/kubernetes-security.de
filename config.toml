@@ -1,86 +1,14 @@
 baseURL = "https://kubernetes-security.de"
 defaultContentLanguage = "de"
 languageCode = "de"
-title = "Kubernetes Security Blog by Avolens"
+title = "K8s Security | Avolens"
 
 theme = "FeelIt"
 
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    pre = ""
-    post = ""
-    name = "Posts"
-    url = "/posts/"
-    title = ""
-    weight = 1
-  [[menu.main]]
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
-    weight = 2
-  [[menu.main]]
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
-    weight = 3
-  [[menu.main]]
-    identifier = "authors"
-    pre = ""
-    post = ""
-    name = "Authors"
-    url = "/authors/"
-    title = ""
-    weight = 4
-
 [languages]
-  [languages.en]
-    weight = 1
-    title = "Kubernetes Security Blog by Avolens"
-    languageCode = "en"
-    languageName = "English"
-    [[languages.en.menu.main]]
-      identifier = "posts"
-      pre = ""
-      post = ""
-      name = "Posts"
-      url = "/posts/"
-      title = ""
-      weight = 1
-    [[languages.en.menu.main]]
-      identifier = "tags"
-      pre = ""
-      post = ""
-      name = "Tags"
-      url = "/tags/"
-      title = ""
-      weight = 2
-    [[languages.en.menu.main]]
-      identifier = "categories"
-      pre = ""
-      post = ""
-      name = "Categories"
-      url = "/categories/"
-      title = ""
-      weight = 3
-    [[languages.en.menu.main]]
-      identifier = "authors"
-      pre = ""
-      post = ""
-      name = "Authors"
-      url = "/authors/"
-      title = ""
-      weight = 4
   [languages.de]
-    weight = 2
-    title = "Kubernetes Security blog by Avolens"
-    # language code, CN only here
+    weight = 1
+    title = "K8s Security | Avolens"
     languageCode = "de"
     languageName = "German"
     [[languages.de.menu.main]]
@@ -115,6 +43,59 @@ theme = "FeelIt"
       url = "/authors/"
       title = ""
       weight = 4
+    [[languages.de.menu.main]]
+      identifier = "github"
+      pre = "<i class='fab fa-github fa-fw'></i>"
+      post = ""
+      name = ""
+      url = "https://github.com/avolens/kubernetes-security.de/"
+      title = "GitHub"
+      weight = 5
+  [languages.en]
+    weight = 2
+    title = "K8s Security | Avolens"
+    languageCode = "en"
+    languageName = "English"
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      pre = ""
+      post = ""
+      name = "Posts"
+      url = "/posts/"
+      title = ""
+      weight = 1
+    [[languages.en.menu.main]]
+      identifier = "tags"
+      pre = ""
+      post = ""
+      name = "Tags"
+      url = "/tags/"
+      title = ""
+      weight = 2
+    [[languages.en.menu.main]]
+      identifier = "categories"
+      pre = ""
+      post = ""
+      name = "Categories"
+      url = "/categories/"
+      title = ""
+      weight = 3
+    [[languages.en.menu.main]]
+      identifier = "authors"
+      pre = ""
+      post = ""
+      name = "Authors"
+      url = "/authors/"
+      title = ""
+      weight = 4
+    [[languages.en.menu.main]]
+      identifier = "github"
+      pre = "<i class='fab fa-github fa-fw'></i>"
+      post = ""
+      name = ""
+      url = "https://github.com/avolens/kubernetes-security.de/"
+      title = "GitHub"
+      weight = 5
 
 [markup]
   [markup.highlight]
@@ -180,7 +161,7 @@ theme = "FeelIt"
 [params]
   version = "1.0.X"
   description = "Kubernetes Security Blog by AVOLENS"
-  keywords = ["Kubernetes", "Security", "Blog", "Avolens"]
+  keywords = ["Kubernetes", "Security", "Blog", "AVOLENS"]
   defaultTheme = "auto"
   gitRepo = "https://github.com/avolens/kubernetes-security.de"
   fingerprint = ""
@@ -223,7 +204,7 @@ theme = "FeelIt"
 
   [params.footer]
     enable = true
-    custom = ''
+    custom = '<a href="/imprint" target="_blank" rel="noopener noreffer" title="Imprint">Impressum</a> | <a href="/privacy" target="_blank" rel="noopener noreffer" title="Privacy Policy">Datenschutzerklärung</a>'
     hugo = true
     copyright = true
     author = true
@@ -326,7 +307,7 @@ theme = "FeelIt"
       Trello = false
       Mix = false
     [params.page.comment]
-      enable = true
+      enable = false
       [params.page.comment.disqus]
         enable = false
       [params.page.comment.vssue]
