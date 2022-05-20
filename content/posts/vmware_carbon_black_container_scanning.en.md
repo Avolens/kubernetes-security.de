@@ -5,16 +5,16 @@ draft: false
 author: "Benjamin Koltermann"
 authorlink: "/authors/benjamin-koltermann/"
 featuredImage: "/images/admission-controller-noderestriction/preview.png"
-description: "In diesem Artikel geht es um das scannen und erkennen von Schwachstellen von Container Images mit der VMware Carbon Black Lösung. Außerdem wird die Integration des Container Scanning mithilfe von Policies in ein Kubernetes Cluster beschrieben."
+description: "This article is about integrating VMWare Carbon Black's container scanning solution into a Kubernetes cluster using container image scanning policies."
 tags: [vmware, carbon black, image scanning]
 categories: [VMware]
 ---
 
 <!--more-->
 
-## Die Testumgebung und Installation
+## Test environment and installation
 
-Als Testumgebung, haben wir ein einfaches 3 Node Cluster, mit 2 Worker und einer Master Node, bestehend aus den folgenden Komponenten gewählt. 
+As a test environment, we have chosen a simple three node cluster, with two workers and a master node, consisting of the following components.
 
 ```bash
 bash:~$ kubectl get nodes
@@ -25,10 +25,10 @@ worker-2   Ready    worker                 101d   v1.23.3
 
 ### Carbon Black Kubernetes Sensor
 
-Carbon Black oder genauer der Kubernetes Sensor für Carbon Black, wurde nach der offiziellen [Carbon Black Installationsanleitung](https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/cbc-sensor-installation-guide/GUID-D2D621D7-E341-4F16-88AF-B5919958B142.html) installiert und konfiguriert. Nach dem der Sensor installiert ist, sollten alle Pods mit der Zeit starten.
+Carbon Black, or more specifically the Kubernetes sensor for Carbon Black, has been installed and configured according to the official [Carbon Black Installation Guide](https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/cbc-sensor-installation-guide/GUID-D2D621D7-E341-4F16-88AF-B5919958B142.html). After the sensor is installed, all pods should start over time.
 
 ```bash
-bash:~$ kubectl get pods -n carbon-black
+bash:~$ kubectl get pods -n cbcontainers-dataplane
 cbcontainers-hardening-enforcer-5df47c77c9-c7brn         1/1     Running   4          66d
 cbcontainers-hardening-state-reporter-6f74d96cf4-dgvhr   1/1     Running   4          66d
 cbcontainers-image-scanning-reporter-c99d75559-n64wh     1/1     Running   4          66d
@@ -41,7 +41,7 @@ cbcontainers-runtime-resolver-5b4cc65849-vxrg4           1/1     Running   4    
 
 ### Carbon Black CLI
 
-Zum scannen der Container Images wird die Carbon Black CLI benötigt. Diese kann in Carbon Black unter **Inventory** --> **Kubernetes** --> **Clusters** --> **CLI Config** eingerichtet und gedownloaded werden. Die Carbon Black Binary sollte anschließend einsatzbereit sein.
+The Carbon Black CLI is required to scan the container images. This can be set up and downloaded in the Carbon Black environment under **Inventory** --> **Kubernetes** --> **Clusters** --> **CLI Config**. The Carbon Black binary should then be ready to use.
 
 {{< admonition type=example title="Carbon Black CLI Beispiel" open=false >}}
 
@@ -67,21 +67,21 @@ Compiler:    gc
 
 {{< admonition type=info title="Carbon Black Policies" open=true >}}
 
-Dieser Artikel Beschäftigt sich **nicht** intensiv mit den Carbon Black Policies, weshalb nur der Prozess zum Erstellen von Carbon Black Kubernetes Policies für Image Scanning beschrieben wird. Die offizielle Dokumentation von VMware zu den Kubernetes Policies befindet sich [hier](https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/carbon-black-cloud-user-guide/GUID-AE6ED527-C2DF-471B-92F8-0C9269975C2B.html).
+This article does **not** deal with Carbon Black Policies in depth, only the process to create Carbon Black Kubernetes Policies for Image Scanning is described. VMware's official documentation on Kubernetes policies can be found [here](https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/carbon-black-cloud-user-guide/GUID-AE6ED527-C2DF-471B-92F8-0C9269975C2B.html).
 
 {{< /admonition >}}
 
-Die Carbon Black Kubernetes Image scanning Policiy, zählt zu den Hardening Policies. Somit muss in der Carbon Black Umgebung eine Policiy unter **Enforce** --> **K8s Policies** --> **Hardening Policies** angelegt werden. Nachdem der Policiy ein Name und Scope zugewiesen wurde findet man unter **Container Images** eine Regel mit dem Namen `Image not scanned`. Diese Regel fügen wir unserer Policy mit der Aktion `Block` hinzu. Anschließend bekommt man die Möglichkeit Außnahmen für bereits existierende Workloads innerhalb des gewählten Scopes zu definieren. Nachdem die Policy erstellt wurde, kann es eine halbe Minute dauern, bis diese greift.
+The Carbon Black Kubernetes image scanning policy is one of the hardening policies. Therefore, a policy must be created in the Carbon Black environment under **Enforce** --> **K8s Policies** --> **Hardening Policies**. After assigning a name and scope to the policy, we find a rule named `Image not scanned` under **Container Images**. We add this rule to our policy with the action `Block`. Then we get the possibility to define exceptions for already existing workloads within the selected scope. After the policy is created, it may take half a minute for it to take effect.
 
 {{< admonition type=info title="Kubernetes Scopes" open=true >}}
 
-Die Wahl des Richtigen Kubernetes Scopes kann entscheidend sein. Da Kubernetes Scopes nicht in diesem Artikel behandelt werden, findet man eine Übersicht [hier](https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/carbon-black-cloud-user-guide/GUID-14E951FE-F4DA-49EB-9FF5-B655BB0490DC.html).
+Choosing the right Kubernetes scope can be critical. Since Kubernetes scopes are not covered in this article, you can find an overview [here](https://docs.vmware.com/en/VMware-Carbon-Black-Cloud/services/carbon-black-cloud-user-guide/GUID-14E951FE-F4DA-49EB-9FF5-B655BB0490DC.html).
 
 {{< /admonition >}}
 
-## Image Scanning mit der Carbon Black CLI
+## Image Scanning with the Carbon Black CLI
 
-Das scannen eines Images lässt sich schnell und einfach durchführen. In der Carbon Black CLI wird der `image scan` Befehl genutzt, um ein Image zu scannen. Im Anschluss wird das zu scannende Image angegeben, die Ergebnisse des Scanns erhält man direkt als Ausgabe der CLI, man kann sich diese aber auch in der Carbon Black Cloud ansehen. Der Upload des Scanergebnis in die Carbon Black Cloud erfolgt automatisch, nach Abschluss des Image scan.
+Scanning an image can be done quickly and easily. In the Carbon Black CLI the `image scan` command is used to scan an image. The image to be scanned is then specified, and the results of the scan are displayed directly as output from the CLI, but can also be viewed in the Carbon Black Cloud. The upload of the scan result to the Carbon Black Cloud is done automatically after the image scan is finished.
 
 {{< admonition type=example title="Carbon Black CLI Ubuntu Image Beispiel Scan" open=false >}}
 
@@ -109,15 +109,15 @@ Detailed report can be found at
 https://defense-eu.conferdeploy.net/kubernetes/image/sha256:e1afa64d6afd381bdcec761b92c77abf6a86a7812fba35df25a6c8d883197837/overview
 ```
 
-In der Cloud Oberfläche erhält man eine Zusammenfassung über den Container Image Scan, sowie eine detaillierte Übersicht unter den Reiter `Vulnerabilities`.
+In the cloud interface, you get a summary of the container image scan, as well as a detailed overview under the tab 'Vulnerabilities'.
 
-{{< image src="/images/vmware-carbon-black-kubernetes-image-scanning/cb-image-scan-overview-cloud.png" caption="Übersicht über den Image Scan des Ubuntu Image" >}}
+{{< image src="/images/vmware-carbon-black-kubernetes-image-scanning/cb-image-scan-overview-cloud.png" caption="Overview of the Ubuntu Image Scan" >}}
 
 {{< /admonition >}}
 
-### Test Deployment ohne gescanntes Images
+### Deployment without scanned images
 
-Sollte ein Container Image nicht vor dem Deployen gescannt sein, erhält man eine Fehlermeldung, dass das Deployment von einer Kubernetes Security Policy geblockt wurde.
+If a container image is not scanned before deployment, you will receive an error message that the deployment was blocked by a Kubernetes security policy.
 
 ```bash
 bash:~$ kubectl create deployment ubuntu-bionic-20220315 -n secure --image ubuntu:bionic-20220315

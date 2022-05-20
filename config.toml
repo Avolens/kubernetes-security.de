@@ -258,7 +258,7 @@ theme = "FeelIt"
     [params.page.toc]
       enable = true
       keepStatic = false
-      auto = true
+      auto = false
     [params.page.math]
       enable = true
       blockLeftDelimiter = ""
@@ -269,7 +269,7 @@ theme = "FeelIt"
       mhchem = true
     [params.page.code]
       copy = true
-      maxShownLines = 10
+      maxShownLines = 15
     [params.page.share]
       enable = true
       Twitter = true
