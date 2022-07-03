@@ -13,9 +13,11 @@ postnav:
 
 ## Angaben gemäß § 5 TMG
 
-#### Avolens GmbH
+#### AVOLENS GmbH
 
-ADDRESS HERE
+Universitätsstraße 142
+
+44799 Bochum
 
 Vertreten durch:
 
@@ -23,9 +25,9 @@ Vertreten durch:
 
 ## Kontakt
 
-**Telefon**: PHONE HERE
+**Telefon**: +49 (0)234 33381648
 
-**E-Mail**: MAIL HERE
+**E-Mail**: webadmin@avolens.com
 
 **Inhaltlich Verantwortlicher gemäß § 55 Abs. 2RStV**: Benjamin Koltermann
 
