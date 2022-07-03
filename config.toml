@@ -1,14 +1,14 @@
 baseURL = "https://kubernetes-security.de"
 defaultContentLanguage = "de"
 languageCode = "de"
-title = "K8s Security | Avolens"
+title = "AVOLENS K8S Security"
 
 theme = "FeelIt"
 
 [languages]
   [languages.de]
     weight = 1
-    title = "K8s Security | Avolens"
+    title = "AVOLENS K8S Security"
     languageCode = "de"
     languageName = "German"
     [[languages.de.menu.main]]
@@ -53,7 +53,7 @@ theme = "FeelIt"
       weight = 5
   [languages.en]
     weight = 2
-    title = "K8s Security | Avolens"
+    title = "AVOLENS K8S Security"
     languageCode = "en"
     languageName = "English"
     [[languages.en.menu.main]]
@@ -120,7 +120,7 @@ theme = "FeelIt"
     endLevel = 5
 
 [author]
-  name = "Avolens GmbH"
+  name = "AVOLENS GmbH"
   email = ""
   link = "https://avolens.com"
 
@@ -166,7 +166,7 @@ theme = "FeelIt"
   gitRepo = "https://github.com/avolens/kubernetes-security.de"
   fingerprint = ""
   dateFormat = "2006-01-02"
-  images = ["/images/kubernetes-logo.svg"]
+  images = ["/images/AVOLENS_Logo.svg"]
   SourceMap = true
 
   [params.pwa]
@@ -195,9 +195,9 @@ theme = "FeelIt"
     desktopMode = "fixed"
     mobileMode = "auto"
     [params.header.title]
-      logo = ""
-      name = "Kubernetes Security Blog by AVOLENS"
-      pre = ""
+      logo = "/images/AVOLENS_Logo.svg"
+      name = "Kubernetes Security by AVOLENS"
+      pre = " "
       post = ""
       typeit = false
       rss = true
@@ -228,14 +228,7 @@ theme = "FeelIt"
   [params.home]
     rss = 10
     [params.home.profile]
-      enable = true
-      gravatarEmail = ""
-      avatarURL = "/images/kubernetes-logo.svg"
-      title = "Kubernetes Security Blog by AVOLENS"
-      subtitle = "Secure your Deployments"
-      typeit = true
-      social = true
-      disclaimer = ""
+      enable = false
     [params.home.posts]
       enable = true
       paginate = 6

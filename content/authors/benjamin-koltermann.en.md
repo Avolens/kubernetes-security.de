@@ -12,7 +12,7 @@ toc:
 hiddenFromSearch: true
 ---
 
-{{< image src="/images/avatar.png" caption="Benjamin Koltermann" >}}
+{{< image src="/images/benjamin-koltermann.jpg" caption="Benjamin Koltermann" >}}
 
 Benjamin Koltermann is the CEO and co-founder of AVOLENS GmbH. He works out customer-specific security strategies for various cloud and Kubernetes environments.
 
