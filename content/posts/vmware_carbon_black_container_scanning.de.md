@@ -4,7 +4,7 @@ date: 2022-05-10
 draft: false
 author: "Benjamin Koltermann"
 authorlink: "/authors/benjamin-koltermann/"
-featuredImage: "/images/admission-controller-noderestriction/preview.png"
+featuredImage: "/images/vmware-carbon-black-kubernetes-image-scanning/preview.png"
 description: "In diesem Artikel geht es um das scannen und erkennen von Schwachstellen von Container Images mit der VMware Carbon Black Lösung. Außerdem wird die Integration des Container Scanning mithilfe von Policies in ein Kubernetes Cluster beschrieben."
 tags: [vmware, carbon black, image scanning]
 categories: [VMware]
