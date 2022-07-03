@@ -3,7 +3,7 @@ title: "Admission Controller NodeRestriction in Action"
 date: 2022-01-10T15:55:00+01:00
 draft: false
 author: "Benjamin Koltermann"
-authorlink: "/en/authors/avolens/benjamin_koltermann/"
+authorlink: "/en/authors/benjamin-koltermann/"
 featuredImage: "/images/admission-controller-noderestriction/preview.png"
 description: "This blog post demonstrates how the Admission Controller NodeRestriction can protect a cluster from deeper penetration by an attacker."
 tags: [kubernetes, admission controller, video]

@@ -12,7 +12,7 @@ toc:
 hiddenFromSearch: true
 ---
 
-{{< image src="/images/avatar.png" caption="Benjamin Koltermann" >}}
+{{< image src="/images/benjamin-koltermann.jpg" caption="Benjamin Koltermann" >}}
 
 Benjamin Koltermann ist der Geschäftsführer und Mitgründer der AVOLENS GmbH. Er arbeitet für verschiedene Cloud und Kubernetes Umgebungen kundenspezifische Sicherheitsstrategien aus.
 
