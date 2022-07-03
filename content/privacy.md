@@ -22,8 +22,12 @@ Personenbezogene Daten wie Name, Anschrift oder E-Mail erheben wir nur, sofern S
 
 ## Ihre Rechte
 
-Sie haben jederzeit das Recht Auskunft ueber die die von uns genutzten Daten die in Zusammenhang mit Ihnen stehen gespeichert werden. Ausserdem koennen Sie eine Loeschung dieser Daten beantragen.
+Du hast jederzeit das Recht Auskunft ueber die die von uns genutzten Daten die in Zusammenhang mit dir stehen gespeichert werden. Ausserdem kannst du eine Loeschung dieser Daten beantragen.
 
 ## Hosting
 
 Wir Hosten diesen Blog bei Netlify. Die Datenschutzerklärung von Netlify findest du [hier](https://www.netlify.com/privacy/).
+
+## HUGO
+
+Wir nutzen HUGO nach folgenden vorgaben: https://gohugo.io/about/hugo-and-gdpr/
