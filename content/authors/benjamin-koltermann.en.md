@@ -19,3 +19,4 @@ Benjamin Koltermann is the CEO and co-founder of AVOLENS GmbH. He works out cust
 ## Articles by this author
 
 * [Admission Controller NodeRestriction in Action](/en/admission_controler_noderestriction/)
+* [VMware Carbon Black Kubernetes Image Scanning](/en/vmware_carbon_black_container_scanning/)
