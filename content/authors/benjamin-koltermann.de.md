@@ -19,3 +19,4 @@ Benjamin Koltermann ist der Geschäftsführer und Mitgründer der AVOLENS GmbH. 
 ## Artikel von diesem Autor
 
 * [Admission Controller NodeRestriction in Aktion](/admission_controler_noderestriction/)
+* [VMware Carbon Black Kubernetes Image Scanning](/vmware_carbon_black_container_scanning//)
